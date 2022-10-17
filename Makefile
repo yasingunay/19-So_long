@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/10/17 11:07:24 by ygunay           ###   ########.fr        #
+#    Updated: 2022/10/17 11:12:41 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ fclean: clean
 	$(RM) $(NAME)
 	
 re: fclean all
+
+.PHONY: all clean fclean re
 	
 	
 RED = \033[1;31m
