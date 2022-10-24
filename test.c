@@ -6,11 +6,12 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:47:47 by ygunay            #+#    #+#             */
-/*   Updated: 2022/10/19 16:20:48 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/10/24 12:00:31 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
+
 
 typedef struct	s_vector
 {
@@ -47,8 +48,8 @@ int	main(void)
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 1000, 1000, "Hello world!");
 
-	char *path ="block.xpm";
-	img.img = mlx_xpm_file_to_image(mlx, path, &img.size.x, &img.size.y);
+
+	img.img = mlx_new_image(mlx,1000,1000);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 							&img.endian);
 
@@ -59,19 +60,56 @@ int	main(void)
 
 	
 	y =  0;
-	while (y < img.size.y)
+	while (y < 1000)
 	{
 		x = 0;
-		while(x < img.size.x)
+		while(x < 1000)
 		{
 			
-			my_mlx_pixel_put(&img, x, y, 0x00FF0000);
+			my_mlx_pixel_put(&img, x, y, 0xFFFFFF);
 			x++;
 		}
 		y++;
-	
-}
-	
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 900, 900);
+	}
+
+
+
+
+
+	int i;
+	int j;
+		
+	i =  0;
+	while (i < 100)
+	{
+		j = 0;
+		while(j < 100)
+		{
+			
+			my_mlx_pixel_put(&img, i, j, 0xFF0000);
+			j++;
+		}
+		i++;
+	}
+
+
+	int k;
+	int l;
+		
+	k =  900;
+	while (k < 1000)
+	{
+		l = 900;
+		while(l < 1000)
+		{
+			
+			my_mlx_pixel_put(&img, k, l, 0x00FF00);
+			l++;
+		}
+		k++;
+	}
+	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
+
+	
 }
