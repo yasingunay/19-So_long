@@ -6,11 +6,11 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/10/17 11:12:41 by ygunay           ###   ########.fr        #
+#    Updated: 2022/10/28 18:02:27 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = test.c
+SRCS = so_long.c so_long_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -27,7 +27,7 @@ CFLAGS = -Wall -Werror -Wextra
 all:	$(NAME)
 
 $(NAME) : $(OBJS)
-		 $(CC) $(CFLAGS) test.c -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+		 $(CC) $(CFLAGS) $(SRCS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 		 @echo "$(GREEN)$(NAME) created!$(DEFAULT)"
 clean:
 	$(RM) $(OBJS)
