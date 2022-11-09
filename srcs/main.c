@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/09 17:30:17 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/09 17:35:55 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main(int ac, char **av)
 
     
     game.map = ft_get_map(av[1]);
-    game.map_size.map_w=map_weight(game);
-    game.map_size.map_h=map_height(game);
-    game.win_size.x=game.map_size.map_w * 200;
-    game.win_size.y=game.map_size.map_h * 200;
+    game.map_size.w=map_weight(game);
+    game.map_size.h=map_height(game);
+    game.win_size.x=game.map_size.w * 200;
+    game.win_size.y=game.map_size.h * 200;
     game.mlx = mlx_init();
     game.windows = mlx_new_window(game.mlx,game.win_size.x,game.win_size.y,"so_long");
     mlx_loop(game.mlx);

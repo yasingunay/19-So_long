@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/09 17:26:27 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/09 17:35:15 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct s_vector
 
 typedef struct s_map
 {
-    int map_h;
-    int map_w;
+    int h;
+    int w;
 }t_map;
 
 
