@@ -6,11 +6,17 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/10/28 18:02:27 by ygunay           ###   ########.fr        #
+#    Updated: 2022/11/09 16:14:44 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = so_long.c so_long_utils.c
+SRCS =  ./gnl/get_next_line_utils.c\
+		./gnl/get_next_line.c\
+		./srcs/main.c\
+		./srcs/map.c\
+		./srcs/error.c\
+		./libft/ft_split.c\
+		./libft/ft_strdup.c\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -37,6 +43,11 @@ fclean: clean
 	$(RM) $(NAME)
 	
 re: fclean all
+
+
+leaks:		${NAME}																		# adds valgrind to check system leaks
+			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+			@echo $(BBlue)No Leaks Detected$(Color_Off);
 
 .PHONY: all clean fclean re
 	
