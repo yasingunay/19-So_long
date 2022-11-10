@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/10 14:57:22 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/10 17:11:25 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ typedef struct s_vector
 
 typedef struct s_game
 {
+    int e;
+    int p;
+    int c;
     void *mlx;
     void *windows;
     t_vector win_size;
@@ -76,6 +79,7 @@ int map_height(t_game game);
 int	hook(int keycode, t_game *game);
 int	free_and_close(t_game *game);
 void ft_error(char *error);
+void ft_error_message(char *error);
 
 
 
