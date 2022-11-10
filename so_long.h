@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/10 11:53:23 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/10 14:57:22 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@
 #include "gnl/get_next_line.h"
 #include "libft/libft.h"
 
-// # define PLAYER "graphic/oryx_16bit_scifi_creatures_1224.xpm"
-// # define WALL "graphic/oryx_16bit_scifi_world_35.xpm"
-// # define COLLECTIBLE "graphic/oryx_16bit_scifi_items_83.xpm"
-// # define E_CLOSE "graphic/oryx_16bit_scifi_world_79.xpm"
-// # define E_OPEN "graphic/oryx_16bit_scifi_world_78.xpm"
-// # define SPACE "graphic/oryx_16bit_scifi_world_832.xpm"
+# define PLAYER "graphic/oryx_16bit_scifi_creatures_1224.xpm"
+# define WALL "graphic/oryx_16bit_scifi_world_35.xpm"
+# define COLLEC "graphic/oryx_16bit_scifi_items_83.xpm"
+# define EXIT "graphic/oryx_16bit_scifi_world_79.xpm"
+# define E_SPACE "graphic/oryx_16bit_scifi_world_832.xpm"
 // # define W 13
 // # define A 0
 // # define S 1
@@ -46,11 +45,7 @@ typedef struct s_vector
 	int	y;
 }	t_vector;
 
-typedef struct s_map
-{
-    int h;
-    int w;
-}t_map;
+
 
 
 typedef struct s_game
@@ -59,7 +54,15 @@ typedef struct s_game
     void *windows;
     t_vector win_size;
     char **map;
-    t_map map_size;
+    int map_h;
+    int map_w;
+    void *wall;
+    void *player;
+    void *collec;
+    void *e_space;
+    void *exit;
+    
+    
 }t_game;
 
 
