@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/09 17:35:15 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:26:22 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <fcntl.h>
 #include "gnl/get_next_line.h"
 #include "libft/libft.h"
+
 
 
 typedef struct s_vector
@@ -44,6 +45,7 @@ typedef struct s_game
     char **map;
     t_map map_size;
 }t_game;
+
 
 
 
