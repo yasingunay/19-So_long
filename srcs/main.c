@@ -6,28 +6,11 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/10 11:34:27 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/10 11:54:03 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-
-
-int	free_and_close(t_game *game)
-{
-	
-	mlx_destroy_window(game->mlx, game->windows);
-
-	exit (0);
-}
-
-int	hook(int keycode, t_game *game)
-{
-	if (keycode == 53)
-		free_and_close(game);
-	return (0);
-}
 
 
 int main(int ac, char **av)
@@ -48,7 +31,7 @@ int main(int ac, char **av)
     game.mlx = mlx_init();
     game.windows = mlx_new_window(game.mlx,game.win_size.x,game.win_size.y,"so_long");
     mlx_key_hook(game.windows, hook, &game);
-    mlx_hook(game.windows, 17, 0, free_and_close, &game);
+    mlx_hook(game.windows, QUIT, 0, free_and_close, &game);
     mlx_loop(game.mlx);
     
 
