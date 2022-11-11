@@ -6,14 +6,14 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/11 12:12:54 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 14:32:16 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
 
-void convert_xpm_to_image(t_game *game)
+void ft_convert_xpm_to_image(t_game *game)
 {
 
     int measure;
@@ -29,7 +29,7 @@ void convert_xpm_to_image(t_game *game)
 
 
 
-void replace_map_with_image(t_game *game, int m)
+void ft_replace_map_with_image(t_game *game, int m)
 {
     int i= 0;
     game->e = 0;
@@ -80,7 +80,7 @@ void replace_map_with_image(t_game *game, int m)
 }
 
 
-int map_check (t_game *game)
+int ft_map_check (t_game *game)
 {
   
         if(game->e != 1 || game->p != 1 || game->c < 1 )   
@@ -107,11 +107,11 @@ int main(int ac, char **av)
     if(ac != 2)
         ft_error("Invalid amount of arguments ");
 	
-	map_extension_control(av[1]);
+	ft_map_extension_control(av[1]);
 
     game.map = ft_get_map(av[1]);
-    game.map_w=map_weight(game);
-    game.map_h=map_height(game);
+    game.map_w=ft_map_weight(game);
+    game.map_h=ft_map_height(game);
     game.win_size.x=game.map_w * 24;
     game.win_size.y=game.map_h * 24;
 
@@ -120,16 +120,16 @@ int main(int ac, char **av)
     game.mlx = mlx_init();
     game.windows = mlx_new_window(game.mlx,game.win_size.x,game.win_size.y,"so_long");
    
-    convert_xpm_to_image(&game);
-    replace_map_with_image(&game, 24);
+    ft_convert_xpm_to_image(&game);
+    ft_replace_map_with_image(&game, 24);
     
   
-    if(!map_check (&game))
+    if(!ft_map_check (&game))
        ft_error("");
   
    
-    mlx_key_hook(game.windows, hook, &game);
-    mlx_hook(game.windows, QUIT, 0, free_and_close, &game);
+    mlx_key_hook(game.windows, ft_hook, &game);
+    mlx_hook(game.windows, QUIT, 0, ft_free_and_close, &game);
     mlx_loop(game.mlx);
     
 

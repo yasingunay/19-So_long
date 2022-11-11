@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:08:04 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/09 17:27:27 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 14:31:02 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	**ft_get_map(char *fmap)
 }
 
 
-void map_extension_control(char *map)
+void ft_map_extension_control(char *map)
 {
 	int len;
 	
@@ -51,7 +51,7 @@ void map_extension_control(char *map)
 	
 }
 
-int map_height(t_game game)
+int ft_map_height(t_game game)
 {
 
 	int i;
@@ -63,7 +63,7 @@ int map_height(t_game game)
 	return (i);
 }
 
-int map_weight(t_game game)
+int ft_map_weight(t_game game)
 {
 
 	int i;
