@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:56:25 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/11 16:12:15 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 16:55:54 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void ft_replace_map_with_image(t_game *game, int m)
     game->e = 0;
     game->p = 0;
     game->c = 0;
+
+    
 
     while (i < game->map_h)
     {

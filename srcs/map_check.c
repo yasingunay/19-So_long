@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:33:58 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/11 16:04:34 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 16:57:31 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int ft_map_size_check (t_game *game)
             return (1);
        
 }
+
+
 
 void ft_map_extension_control(char *map)
 {
