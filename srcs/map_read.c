@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map_read.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:08:04 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/11 14:31:02 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 16:14:26 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-char	**ft_get_map(char *fmap)
+char	**ft_read_map(char *fmap)
 {
 	char	*line;
 	char	*all_lines;
@@ -39,37 +39,26 @@ char	**ft_get_map(char *fmap)
 }
 
 
-void ft_map_extension_control(char *map)
-{
-	int len;
-	
-	len = 0;
-	len = ft_strlen(map);
 
-	if(map[len-1] != 'r' || map[len-2] != 'e' ||  map[len-3] != 'b' || map[len-4] != '.')
-		ft_error("the map file could not be found\n");
-	
-}
-
-int ft_map_height(t_game game)
+int ft_map_height(t_game *game)
 {
 
 	int i;
 
 	i = 0;
-	while(game.map[i])
+	while(game->map[i])
 		i++;
 	
 	return (i);
 }
 
-int ft_map_weight(t_game game)
+int ft_map_weight(t_game *game)
 {
 
 	int i;
 
 	i = 0;
-	while(game.map[1][i])
+	while(game->map[1][i])
 		i++;
 	
 	return (i);

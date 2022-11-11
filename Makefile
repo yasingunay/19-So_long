@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/11/11 11:05:36 by ygunay           ###   ########.fr        #
+#    Updated: 2022/11/11 16:02:17 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,11 @@ CFLAGS = -Wall -Werror -Wextra
 SRCS =  ./gnl/get_next_line_utils.c\
 		./gnl/get_next_line.c\
 		./srcs/main.c\
-		./srcs/map.c\
+		./srcs/map_read.c\
+		./srcs/init_window.c\
 		./srcs/hooks.c\
 		./srcs/error.c\
+		./srcs/map_check.c\
 		./libft/ft_split.c\
 		./libft/ft_strdup.c\
 

@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/11 14:31:27 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 16:14:39 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,19 @@ typedef struct s_game
 
 
 
-char	**ft_get_map(char *fmap);
+char	**ft_read_map(char *fmap);
 void ft_map_extension_control(char *map);
-int ft_map_weight(t_game game);
-int ft_map_height(t_game game);
+int ft_map_weight(t_game *game);
+int ft_map_height(t_game *game);
 int	ft_hook(int keycode, t_game *game);
 int	ft_free_and_close(t_game *game);
 void ft_error(char *error);
 void ft_error_message(char *error);
+int ft_map_size_check (t_game *game);
+int ft_map_dup_check (t_game *game);
+void ft_convert_xpm_to_image(t_game *game);
+void ft_replace_map_with_image(t_game *game, int m);
+void ft_init_window(t_game *game);
 
 
 
