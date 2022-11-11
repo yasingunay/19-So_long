@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/10 17:11:25 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 12:11:35 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef struct s_vector
 
 
 
-
 typedef struct s_game
 {
     int e;
@@ -64,6 +63,7 @@ typedef struct s_game
     void *collec;
     void *e_space;
     void *exit;
+   
     
     
 }t_game;

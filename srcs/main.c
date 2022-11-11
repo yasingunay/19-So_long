@@ -6,11 +6,12 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/10 17:26:20 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/11 12:12:54 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
 
 void convert_xpm_to_image(t_game *game)
 {
@@ -25,6 +26,8 @@ void convert_xpm_to_image(t_game *game)
     game->player = mlx_xpm_file_to_image(game->mlx,PLAYER,&measure,&measure);
       
 }
+
+
 
 void replace_map_with_image(t_game *game, int m)
 {
@@ -95,8 +98,6 @@ int map_check (t_game *game)
        
 }
       
-   
-
 
 
 
@@ -114,19 +115,19 @@ int main(int ac, char **av)
     game.win_size.x=game.map_w * 24;
     game.win_size.y=game.map_h * 24;
 
+    
 
     game.mlx = mlx_init();
     game.windows = mlx_new_window(game.mlx,game.win_size.x,game.win_size.y,"so_long");
    
-    
     convert_xpm_to_image(&game);
     replace_map_with_image(&game, 24);
+    
   
     if(!map_check (&game))
        ft_error("");
   
-
-    
+   
     mlx_key_hook(game.windows, hook, &game);
     mlx_hook(game.windows, QUIT, 0, free_and_close, &game);
     mlx_loop(game.mlx);
