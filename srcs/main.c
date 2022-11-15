@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 13:20:14 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/15 15:34:21 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ int	walk(int keycode, t_game *game)
 	return (keycode);
 }
 
-
+void ft_start(t_game *game)
+{
+	game->count = 0;
+}
 
 
 
@@ -66,6 +69,7 @@ int	walk(int keycode, t_game *game)
 int main(int ac, char **av)
 {
     t_game game;
+	ft_start(&game);
     if(ac != 2)
         ft_error("Invalid amount of arguments ");
 	ft_map_extension_control(av[1]);
