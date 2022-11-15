@@ -6,25 +6,25 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:33:58 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/11 16:57:31 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/15 11:01:49 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int ft_map_dup_check (t_game *game)
-{
+// int ft_map_dup_check (t_game *game)
+// {
   
-        if(game->e != 1 || game->p != 1 || game->c < 1 )   
-        {
-            ft_error_message("the map contains a duplicates characters or mandatory characters are missing. Game can not start ");
-            return (0);
-        }
+//         if(game->e != 1 || game->p != 1 || game->c < 1 )   
+//         {
+//             ft_error_message("the map contains a duplicates characters or mandatory characters are missing. Game can not start ");
+//             return (0);
+//         }
        
-        else
-            return (1);
+//         else
+//             return (1);
        
-}
+// }
 
 int ft_map_size_check (t_game *game)
 {
