@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 16:15:43 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/15 18:53:59 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@
 #include <fcntl.h>
 #include "gnl/get_next_line.h"
 #include "libft/libft.h"
+#include "printf/ft_printf.h"
 
 # define PLAYER "graphic/oryx_16bit_scifi_creatures_1224.xpm"
 # define WALL "graphic/oryx_16bit_scifi_world_35.xpm"
 # define COLLEC "graphic/oryx_16bit_scifi_items_83.xpm"
 # define EXIT "graphic/oryx_16bit_scifi_world_79.xpm"
+# define EXIT_OPEN "door_02.xpm"
 # define E_SPACE "graphic/oryx_16bit_scifi_world_832.xpm"
 # define BG "graphic/bg.xpm"
 # define W 13
@@ -50,6 +52,8 @@ typedef struct s_vector
 typedef struct s_player
 {
    t_vector pos;
+ 
+   
 }t_player;
 
 
@@ -62,7 +66,7 @@ typedef struct s_game
 {
     int e;
     int p;
-    int c;
+    int cb;
     void *mlx;
     void *windows;
     t_vector win_size;
@@ -71,11 +75,14 @@ typedef struct s_game
     int map_w;
     void *wall;
     t_player *player;
+    
     void *collec;
     void *e_space;
-    void *bg;
     void *exit;
+    void *exit_open;
     int count;
+    int end_x;
+    int end_y;
     
     
 }t_game;

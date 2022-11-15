@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:56:25 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 16:19:36 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/15 19:06:27 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void ft_convert_xpm_to_image(t_game *game, int x , int y)
     game->collec= mlx_xpm_file_to_image(game->mlx,COLLEC,&x,&y);
     game->e_space = mlx_xpm_file_to_image(game->mlx,E_SPACE,&x,&y);
     game->exit= mlx_xpm_file_to_image(game->mlx,EXIT,&x,&y);
+    game->exit_open= mlx_xpm_file_to_image(game->mlx,EXIT_OPEN,&x,&y);
     game->player = mlx_xpm_file_to_image(game->mlx,PLAYER,&x,&y);
       
 }
@@ -42,6 +43,8 @@ void ft_replace_map_with_image(t_game *game,char c, int x, int y)
             
             else if(c =='E')
             {
+                game->end_x = x;
+                game->end_y = y;
                 mlx_put_image_to_window(game->mlx,game->windows,game->exit,x ,y);
           
             }
@@ -57,7 +60,7 @@ void ft_replace_map_with_image(t_game *game,char c, int x, int y)
             else
                 ft_error("there are unauthorized character on the map");
             
-        
+            
          
     }
 
@@ -67,7 +70,7 @@ void	ft_put_score(t_game *game)
 	char	*score;
 
 	score = ft_itoa(game->count);
-	mlx_string_put(game->mlx, game->windows, 5, 5, 0xFFFFFFFF, score);
+	mlx_string_put(game->mlx, game->windows, 10, 10, 0xFFFFFFFF, score);
 	free(score);
 }
 
