@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/11/11 16:02:17 by ygunay           ###   ########.fr        #
+#    Updated: 2022/11/15 16:17:04 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,11 @@ SRCS =  ./gnl/get_next_line_utils.c\
 		./srcs/init_window.c\
 		./srcs/hooks.c\
 		./srcs/error.c\
+		./srcs/moves.c\
 		./srcs/map_check.c\
 		./libft/ft_split.c\
 		./libft/ft_strdup.c\
+		./libft/ft_itoa.c\
 
 OBJS = $(SRCS:.c=.o)																	# trasnforms all the ".c" files into ".o" (objects)
 

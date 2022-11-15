@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 15:24:51 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/11/15 16:15:43 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,13 @@ void ft_error(char *error);
 void ft_error_message(char *error);
 int ft_map_size_check (t_game *game);
 //int ft_map_dup_check (t_game *game);
-void ft_convert_xpm_to_image(t_game *game);
+void ft_convert_xpm_to_image(t_game *game, int x , int y);
 void ft_replace_map_with_image(t_game *game,char c, int x, int y);
-void ft_init_window(t_game *game);
+void ft_init_window(t_game *game, int x, int y);
 void ft_render_map (t_game *game);
+int	walk(int keycode, t_game *game);
+void	move_p(t_game *game, int x, int y);
+void	ft_put_score(t_game *game);
 
 
 

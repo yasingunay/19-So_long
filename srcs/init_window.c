@@ -6,30 +6,28 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:56:25 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 11:56:25 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/15 16:19:36 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void ft_convert_xpm_to_image(t_game *game)
+void ft_convert_xpm_to_image(t_game *game, int x , int y)
 {
 
-    int measure;
-
-    measure = 24;
-    //game->bg = mlx_xpm_file_to_image(game->mlx,BG,&measure,&measure);
-    game->wall = mlx_xpm_file_to_image(game->mlx,WALL,&measure,&measure);
-    game->collec= mlx_xpm_file_to_image(game->mlx,COLLEC,&measure,&measure);
-    game->e_space = mlx_xpm_file_to_image(game->mlx,E_SPACE,&measure,&measure);
-    game->exit= mlx_xpm_file_to_image(game->mlx,EXIT,&measure,&measure);
-    game->player = mlx_xpm_file_to_image(game->mlx,PLAYER,&measure,&measure);
+   
+    
+    game->wall = mlx_xpm_file_to_image(game->mlx,WALL,&x,&y);
+    game->collec= mlx_xpm_file_to_image(game->mlx,COLLEC,&x,&y);
+    game->e_space = mlx_xpm_file_to_image(game->mlx,E_SPACE,&x,&y);
+    game->exit= mlx_xpm_file_to_image(game->mlx,EXIT,&x,&y);
+    game->player = mlx_xpm_file_to_image(game->mlx,PLAYER,&x,&y);
       
 }
 
 void ft_replace_map_with_image(t_game *game,char c, int x, int y)
 {
-           // mlx_put_image_to_window(game->mlx,game->windows,game->bg,x ,y);
+         
             if(c =='1')
                 mlx_put_image_to_window(game->mlx,game->windows,game->wall,x ,y);
 
@@ -64,18 +62,31 @@ void ft_replace_map_with_image(t_game *game,char c, int x, int y)
     }
 
 
+void	ft_put_score(t_game *game)
+{
+	char	*score;
+
+	score = ft_itoa(game->count);
+	mlx_string_put(game->mlx, game->windows, 5, 5, 0xFFFFFFFF, score);
+	free(score);
+}
+
+
+
+
 void ft_render_map (t_game *game)
 {
     int i;
     int j;
     int x;
     int y;
+   
 
     i = 0;
     j = 0;
     x = 0;
     y = 0;
-    
+  
     while (i < game->map_h)
         {
             j = 0;
@@ -83,6 +94,7 @@ void ft_render_map (t_game *game)
             while(j < game->map_w)
             {
                 ft_replace_map_with_image(game,game->map[i][j], x, y);
+                ft_put_score(game);
                 x = x + 24;
                 
                 j++;
@@ -95,7 +107,7 @@ void ft_render_map (t_game *game)
 }
 
 
-void ft_init_window(t_game *game)
+void ft_init_window(t_game *game, int x, int y)
 {
     
     game->map_w=ft_map_weight(game);
@@ -106,7 +118,7 @@ void ft_init_window(t_game *game)
     game->mlx = mlx_init();
     game->windows = mlx_new_window(game->mlx,game->win_size.x,game->win_size.y,"so_long");
 
-    ft_convert_xpm_to_image(game);
+    ft_convert_xpm_to_image(game,x,y);
     ft_render_map(game);
 
 }
