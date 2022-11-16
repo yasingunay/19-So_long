@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:44:06 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 19:05:41 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/16 15:19:41 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	move_p(t_game *game, int x, int y)
 {
 
+	
+		
 	
 		
 	if(game->cb == 0 && game->map[y / 24][x / 24] == 'E')
@@ -34,7 +36,7 @@ void	move_p(t_game *game, int x, int y)
 			game->cb -=1;
 			
 
-		game->map[game->player->pos.y / 24][game->player->pos.x / 24] = '0';
+		game->map[game->p_y/ 24][game->p_x / 24] = '0';
 
 		game->map[game->end_y / 24][game->end_x / 24] = 'E';
 		
@@ -57,17 +59,18 @@ int	walk(int keycode, t_game *game)
 {
 	
 	mlx_clear_window(game->mlx, game->windows);
+	
 	if (keycode == RIGHT || keycode == D )
-		move_p(game, game->player->pos.x + 24, game->player->pos.y );
+		move_p(game, game->p_x + 24, game->p_y );
 	
 	if (keycode == LEFT || keycode == A)
-		move_p(game, game->player->pos.x  - 24, game->player->pos.y);
+		move_p(game, game->p_x  - 24, game->p_y);
 		
 	if (keycode == UP || keycode == W)
-		move_p(game,  game->player->pos.x , game->player->pos.y - 24);
+		move_p(game,  game->p_x , game->p_y - 24);
 		
 	if (keycode == DOWN || keycode == S)
-		move_p(game, game->player->pos.x , game->player->pos.y + 24);
+		move_p(game, game->p_x , game->p_y + 24);
 	
 	if (keycode == ESC)
 		 ft_free_and_close(game);

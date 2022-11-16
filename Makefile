@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/11/15 17:01:31 by ygunay           ###   ########.fr        #
+#    Updated: 2022/11/16 14:04:20 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,14 @@ SRCS =  ./gnl/get_next_line_utils.c\
 		./srcs/map_check.c\
 		./libft/ft_split.c\
 		./libft/ft_strdup.c\
+		./libft/ft_calloc.c\
+		./libft/ft_bzero.c\
 		./printf/ft_print_hexa.c\
 		./printf/ft_print_ptr.c\
 		./printf/ft_print_unsigned.c\
 		./printf/ft_printf_utils.c\
 		./printf/ft_printf.c\
+		
 		
 
 OBJS = $(SRCS:.c=.o)																	# trasnforms all the ".c" files into ".o" (objects)

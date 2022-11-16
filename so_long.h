@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/15 18:53:59 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/16 16:23:40 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define WALL "graphic/oryx_16bit_scifi_world_35.xpm"
 # define COLLEC "graphic/oryx_16bit_scifi_items_83.xpm"
 # define EXIT "graphic/oryx_16bit_scifi_world_79.xpm"
-# define EXIT_OPEN "door_02.xpm"
+# define EXIT_OPEN "graphic/door_02.xpm"
 # define E_SPACE "graphic/oryx_16bit_scifi_world_832.xpm"
 # define BG "graphic/bg.xpm"
 # define W 13
@@ -75,7 +75,9 @@ typedef struct s_game
     int map_w;
     void *wall;
     t_player *player;
-    
+    int p_x;
+    int p_y;
+
     void *collec;
     void *e_space;
     void *exit;
@@ -99,8 +101,8 @@ int	ft_hook(int keycode, t_game *game);
 int	ft_free_and_close(t_game *game);
 void ft_error(char *error);
 void ft_error_message(char *error);
-int ft_map_size_check (t_game *game);
-//int ft_map_dup_check (t_game *game);
+void ft_map_size_check (t_game *game);
+void ft_map_dup_check (t_game *game);
 void ft_convert_xpm_to_image(t_game *game, int x , int y);
 void ft_replace_map_with_image(t_game *game,char c, int x, int y);
 void ft_init_window(t_game *game, int x, int y);
@@ -108,6 +110,7 @@ void ft_render_map (t_game *game);
 int	walk(int keycode, t_game *game);
 void	move_p(t_game *game, int x, int y);
 void	ft_put_score(t_game *game);
+void map_character_check (t_game *game);
 
 
 
