@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/16 16:36:50 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/16 17:51:10 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void ft_init_game(t_game *game)
     game->map_h=ft_map_height(game);
 	map_character_check (game);
 	ft_map_size_check(game);
+	wall_check(game);
 	ft_init_window(game,x,y);
 	
 }

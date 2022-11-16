@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:33:58 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/16 16:33:48 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/16 17:55:07 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,3 +90,44 @@ void ft_map_extension_control(char *map)
 
 
 
+void wall_check (t_game *game)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	
+	while (game->map[i])
+	{
+		if(game->map[i][0] != '1')
+			ft_error("wall error");
+		i++;
+	}
+	
+	while (game->map[0][j])
+	{
+		if(game->map[0][j] != '1')
+			ft_error("wall error");
+		j++;
+	}
+
+	j = 0;
+	while (game->map[game->map_h -1][j])
+	{
+		if(game->map[game->map_h -1][j] != '1')
+			ft_error("wall error");
+		j++;
+	}
+
+	i = 0;
+	while (game->map[i])
+	{
+		if(game->map[i][game->map_w -1] != '1')
+			ft_error("wall error");
+		i++;
+	}
+	
+
+
+}

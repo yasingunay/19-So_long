@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/16 16:23:40 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/16 17:23:38 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ int	walk(int keycode, t_game *game);
 void	move_p(t_game *game, int x, int y);
 void	ft_put_score(t_game *game);
 void map_character_check (t_game *game);
+void wall_check (t_game *game);
 
 
 
