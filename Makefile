@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/11/16 14:04:20 by ygunay           ###   ########.fr        #
+#    Updated: 2022/11/17 18:15:34 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,16 @@ RM = rm -rf
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 
 SRCS =  ./gnl/get_next_line_utils.c\
 		./gnl/get_next_line.c\
 		./srcs/main.c\
 		./srcs/map_read.c\
-		./srcs/init_window.c\
-		./srcs/hooks.c\
-		./srcs/error.c\
+		./srcs/init_game.c\
+		./srcs/utils.c\
 		./srcs/moves.c\
+		./srcs/images.c\
 		./srcs/map_check.c\
 		./libft/ft_split.c\
 		./libft/ft_strdup.c\
@@ -65,7 +65,7 @@ re: fclean all																			# rule to recompile MAKEFILE (will remove every
 
 
 leaks:		${NAME}																		# adds valgrind to check system leaks
-			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+			valgrind --leak-check=full ./$(NAME)
 			@echo $(BBlue)No Leaks Detected$(Color_Off);
 
 .PHONY: all clean fclean re 															# in phony section we need to include all used rules

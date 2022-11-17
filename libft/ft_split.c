@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ygunay <ygunay@student.s19.be>             +#+  +:+       +#+        */
+/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 11:33:54 by ygunay            #+#    #+#             */
-/*   Updated: 2022/07/29 12:29:43 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/17 16:39:50 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char	**ft_create_str(char **spl, char const *s, char c, int i)
 	return (spl);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**spl;
 	size_t	size;
@@ -104,6 +104,8 @@ char	**ft_split(char const *s, char c)
 	if (!spl)
 		return (NULL);
 	spl = ft_create_str(spl, s, c, i);
+	if (s)
+		free(s);
 	return (spl);
 }
 
