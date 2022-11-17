@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:08:04 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/17 19:41:44 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/17 20:32:29 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@ char	**ft_read_map(char *fmap)
 	}
 	free(line);
 	close(fd);
-	if (!all_lines)
+	if (!all_lines || all_lines[0] == '\0' )
 	{
 		write(1, "Empty map !\n", 13);
 		exit(1);
 	}
-	if (all_lines[0] == '\0')
-		ft_error("all_lines ");
 	return (ft_split(all_lines, '\n'));
 }
 
