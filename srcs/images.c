@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:13:22 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/17 19:32:08 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/17 19:41:56 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void ft_convert_xpm_to_image(t_game *game, int x , int y)
 
 void ft_replace_map_with_image(t_game *game,char c, int x, int y)
 {
-
             if(c == 'P')
             {
                game->p_x = x;
