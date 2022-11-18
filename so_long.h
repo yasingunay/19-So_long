@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/17 20:51:15 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 11:58:39 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 # define WALL "graphic/oryx_16bit_scifi_world_35.xpm"
 # define COLLEC "graphic/oryx_16bit_scifi_items_83.xpm"
 # define EXIT "graphic/oryx_16bit_scifi_world_79.xpm"
-# define EXIT_OPEN "graphic/door_02.xpm"
+# define EXIT_OPEN "graphic/oryx_16bit_scifi_world_78.xpm"
 # define E_SPACE "graphic/oryx_16bit_scifi_world_832.xpm"
-# define BG "graphic/bg.xpm"
+# define ENEMY "graphic/oryx_16bit_scifi_world_651.xpm"
 # define W 13
 # define A 0
 # define S 1
@@ -40,6 +40,10 @@
 # define RIGHT 124
 # define ESC 53
 # define QUIT 17
+
+# ifndef ANIMATION_FRAMES
+#  define ANIMATION_FRAMES 10
+# endif
 
 typedef struct s_vector
 {
@@ -59,8 +63,11 @@ typedef struct s_game
 	int			map_w;
 	void		*wall;
 	void		*player;
+	void		*enemy;
 	int			p_x;
 	int			p_y;
+	int			e_x;
+	int			e_y;
 	void		*collec;
 	void		*e_space;
 	void		*exit;
@@ -83,6 +90,7 @@ void	ft_map_size_check(t_game *game);
 void	ft_map_dup_check(t_game *game);
 void	ft_convert_xpm_to_image(t_game *game, int x, int y);
 void	ft_replace_map_with_image(t_game *game, char c, int x, int y);
+void	ft_replace_map_with_image2(t_game *game, char c, int x, int y);
 void	ft_init_window(t_game *game, int x, int y);
 void	ft_render_map(t_game *game);
 int		walk(int keycode, t_game *game);
@@ -92,5 +100,6 @@ void	map_character_check(t_game *game);
 void	wall_check(t_game *game);
 void	ft_init_game(t_game *game);
 void	map_dup_check(t_game *game);
+int		ft_update(t_game *game);
 
 #endif

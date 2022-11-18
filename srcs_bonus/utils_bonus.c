@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:49:57 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 09:51:43 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 12:00:09 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,30 @@ void	ft_error(char *error)
 void	ft_error_message(char *error)
 {
 	write (2, error, ft_strlen (error));
+}
+
+void	ft_put_score(t_game *game)
+{
+	char	*score;
+
+	score = ft_itoa(game->count);
+	mlx_string_put(game->mlx, game->windows, 10, 10, 0xFFFFFFFF, score);
+	free(score);
+}
+
+int	ft_update(t_game *game)
+{
+	static int	frame;
+
+	frame++;
+	if (frame == ANIMATION_FRAMES)
+		game->e_y++;
+	else if (frame >= ANIMATION_FRAMES * 2)
+	{
+		game->e_y--;
+		frame = 0;
+	}
+	mlx_put_image_to_window(game->mlx, game->windows,
+		game->enemy, game->e_x, game->e_y);
+	return (0);
 }

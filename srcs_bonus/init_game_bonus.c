@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   init_game_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:56:25 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 09:59:50 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 11:59:10 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_render_map(t_game *game)
 		while (game->map[i][j])
 		{
 			ft_replace_map_with_image(game, game->map[i][j], x, y);
+			ft_replace_map_with_image2(game, game->map[i][j], x, y);
+			ft_put_score(game);
 			x = x + 24;
 			j++;
 		}

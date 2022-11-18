@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   images.c                                           :+:      :+:    :+:   */
+/*   images_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 19:37:04 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 11:31:48 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 11:58:24 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_convert_xpm_to_image(t_game *game, int x, int y)
 	game->exit = mlx_xpm_file_to_image(game->mlx, EXIT, &x, &y);
 	game->exit_open = mlx_xpm_file_to_image(game->mlx, EXIT_OPEN, &x, &y);
 	game->player = mlx_xpm_file_to_image(game->mlx, PLAYER, &x, &y);
+	game->enemy = mlx_xpm_file_to_image(game->mlx, ENEMY, &x, &y);
 }
 
 void	ft_replace_map_with_image(t_game *game, char c, int x, int y)
@@ -42,6 +43,21 @@ void	ft_replace_map_with_image(t_game *game, char c, int x, int y)
 		mlx_put_image_to_window(game->mlx, game->windows, game->collec, x, y);
 	else if (c == '0')
 		mlx_put_image_to_window(game->mlx, game->windows, game->e_space, x, y);
+	else if (game->cb == 0)
+	{
+		mlx_put_image_to_window(game->mlx, game->windows,
+			game->exit_open, game->end_x, game->end_y);
+	}
+}
+
+void	ft_replace_map_with_image2(t_game *game, char c, int x, int y)
+{
+	if (c == 'X')
+	{
+		game->e_x = x;
+		game->e_y = y;
+		mlx_put_image_to_window(game->mlx, game->windows, game->enemy, x, y);
+	}
 	else if (game->cb == 0)
 	{
 		mlx_put_image_to_window(game->mlx, game->windows,
