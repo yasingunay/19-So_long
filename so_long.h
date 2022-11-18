@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 11:58:39 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:47:21 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,19 @@ typedef struct s_vector
 	int	y;
 }	t_vector;
 
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}	t_pos;
+
 typedef struct s_game
 {
 	int			e;
+	int			e_check;
 	int			p;
 	int			cb;
+	int			cb_check;
 	void		*mlx;
 	void		*windows;
 	char		**map;
@@ -76,6 +84,8 @@ typedef struct s_game
 	int			end_x;
 	int			end_y;
 	t_vector	w_s;
+	t_pos		*pos;
+	
 }t_game;
 
 char	**ft_read_map(char *fmap);
@@ -101,5 +111,9 @@ void	wall_check(t_game *game);
 void	ft_init_game(t_game *game);
 void	map_dup_check(t_game *game);
 int		ft_update(t_game *game);
+void	ft_check_path(t_game *game);
+char	**ft_dup_map(t_game *game);
+void	ft_free_dup(char **dup);
+void	ft_put_x(char **grid, int i, int j, t_game *game);
 
 #endif

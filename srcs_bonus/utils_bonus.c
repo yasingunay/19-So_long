@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:49:57 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 12:00:09 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 17:38:38 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,17 @@ int	ft_update(t_game *game)
 	static int	frame;
 
 	frame++;
-	if (frame == ANIMATION_FRAMES)
-		game->e_y++;
-	else if (frame >= ANIMATION_FRAMES * 2)
+	if (frame == 10)
 	{
-		game->e_y--;
+			game->p_y += 1;
+	printf("1 %d\n",game->p_y);
+	}
+	else if (frame >= 20)
+	{
+		game->p_y -= 1;
 		frame = 0;
 	}
-	mlx_put_image_to_window(game->mlx, game->windows,
-		game->enemy, game->e_x, game->e_y);
+	mlx_put_image_to_window(game->mlx, game->windows, game->player, game->p_x, game->p_y);
+	//printf("2 %d\n",game->p_y);
 	return (0);
 }

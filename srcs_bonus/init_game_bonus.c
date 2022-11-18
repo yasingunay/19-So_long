@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:56:25 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 11:59:10 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:05:52 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void	ft_init_game(t_game *game)
 	map_dup_check(game);
 	ft_map_size_check(game);
 	wall_check(game);
+	ft_check_path(game);
 	ft_init_window(game, x, y);
 }

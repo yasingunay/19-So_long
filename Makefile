@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 11:07:21 by ygunay            #+#    #+#              #
-#    Updated: 2022/11/18 10:12:10 by ygunay           ###   ########.fr        #
+#    Updated: 2022/11/18 16:10:39 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS =  ./gnl/get_next_line_utils.c\
 		./srcs/map_read.c\
 		./srcs/init_game.c\
 		./srcs/utils.c\
+		./srcs/valid_path_check.c\
 		./srcs/moves.c\
 		./srcs/images.c\
 		./srcs/map_check.c\
@@ -40,12 +41,14 @@ SRCS =  ./gnl/get_next_line_utils.c\
 		./printf/ft_printf_utils.c\
 		./printf/ft_printf.c\
 		
+
 SRCS_BONUS =  ./gnl/get_next_line_utils.c\
 			./gnl/get_next_line.c\
 			./srcs_bonus/main_bonus.c\
 			./srcs_bonus/map_read_bonus.c\
 			./srcs_bonus/init_game_bonus.c\
 			./srcs_bonus/utils_bonus.c\
+			./srcs_bonus/valid_path_check_bonus.c\
 			./srcs_bonus/moves_bonus.c\
 			./srcs_bonus/images_bonus.c\
 			./srcs_bonus/map_check_bonus.c\
