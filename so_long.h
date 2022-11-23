@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 16:47:21 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/23 15:27:19 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ typedef struct s_game
 	int			end_y;
 	t_vector	w_s;
 	t_pos		*pos;
-	
+
 }t_game;
 
 char	**ft_read_map(char *fmap);
