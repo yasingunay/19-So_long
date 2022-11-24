@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/23 15:32:20 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/24 14:46:19 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int ac, char **av)
 	ft_init_game(&game);
 	mlx_hook(game.windows, 2, (1L << 0), walk, &game);
 	mlx_hook(game.windows, 17, 0, ft_free_and_close, &game);
-	//mlx_loop_hook(game.mlx, *ft_update, (void *)&game);
 	mlx_loop(game.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:49:57 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/18 09:51:43 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/24 14:47:31 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_free_and_close(t_game *game)
 	free(game->map);
 	mlx_destroy_window(game->mlx, game->windows);
 	write (1, "Thanks for playing !\n", 22);
-	system("leaks so_long");
 	exit(0);
 	return (0);
 }
