@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:20:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/25 10:11:20 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/25 11:51:44 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	if (ac != 2)
-		ft_error("Invalid amount of arguments ");
+		ft_error("Invalid amount of arguments");
 	ft_map_extension_control(av[1]);
 	game.map = ft_read_map(av[1]);
 	ft_init_game(&game);
