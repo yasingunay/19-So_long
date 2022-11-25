@@ -6,11 +6,21 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:49:57 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/24 14:46:59 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/25 11:21:23 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+int	str_len(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 int	ft_free_and_close(t_game *game)
 {
@@ -34,12 +44,14 @@ int	ft_free_and_close(t_game *game)
 
 void	ft_error(char *error)
 {
+	write (2, "Error\n", 6);
 	write (2, error, ft_strlen (error));
 	exit(EXIT_FAILURE);
 }
 
 void	ft_error_message(char *error)
 {
+	write (2, "Error\n", 6);
 	write (2, error, ft_strlen (error));
 }
 

@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:21:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/23 15:27:19 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/25 11:16:04 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,6 @@ void	ft_check_path(t_game *game);
 char	**ft_dup_map(t_game *game);
 void	ft_free_dup(char **dup);
 void	ft_put_x(char **grid, int i, int j, t_game *game);
+int		str_len(char *str);
 
 #endif

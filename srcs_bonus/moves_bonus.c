@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:44:06 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/23 15:26:33 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/25 11:29:07 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	move_p(t_game *game, int x, int y)
 		ft_printf("lost!\n");
 		ft_free_and_close(game);
 	}
-	if (game->map[y / 24][x / 24] != '1' && game->map[y / 24][x / 24] != 'E')
+	if (game->map[y / 24][x / 24] != '1')
 	{
 		game->count += 1;
 		if (game->map[y / 24][x / 24] == 'C')

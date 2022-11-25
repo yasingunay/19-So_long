@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:33:58 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/17 19:50:56 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/11/25 11:15:14 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,16 @@ void	map_dup_check(t_game *game)
 
 void	ft_map_size_check(t_game *game)
 {
-	if (game->map_h == game->map_w)
+	int	i;
+	int	len;
+
+	i = 0;
+	len = game->map_w;
+	while (game->map[i])
 	{
-		ft_error_message("the map has to be rectangular ");
-		exit(1);
+		if (str_len(game->map[i]) != len)
+			ft_error("map size error");
+		i++;
 	}
 }
 
